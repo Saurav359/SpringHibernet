@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <context:property-placeholder location="classpath:feeDetails.properties"/>
+    
+ 
+    <!-- Dependency Injection using Normal Constructor, by default the scope of a bean is Singleton -->
+    <bean id="cCoach" class="com.saurav.spring.BeanScope.CricketCoach" scope="singleton">
+    <constructor-arg value="Enjoy Your Day , No Practise Today , Be on time Tommorrow : From singelton bean" />
+    </bean>
+
+        <bean id="prototypeCoach" class="com.saurav.spring.BeanScope.CricketCoach" scope="prototype">
+    <constructor-arg value="Enjoy Your Day , No Practise Today , Be on time Tommorrow : From Prototype Bean" />
+    </bean>
+    
+        <bean id="student" class="com.saurav.spring.BeanLifecycle.StudentFee" init-method="getInitMethodStuff" 
+        destroy-method="getDestroyMethodStuff">
+    <constructor-arg value="100000" />
+    <constructor-arg value="${fee.tenure}" />
+    </bean>
+    
+    
+    <bean id="prototypeStudent" class="com.saurav.spring.BeanLifecycle.StudentFee" init-method="getInitMethodStuff" 
+        destroy-method="getDestroyMethodStuff">
+    <constructor-arg value="100050" />
+    <constructor-arg value="Quaterly" />
+    </bean>
+    
+    
+    
+  </beans>
+    
+    

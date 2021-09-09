@@ -1,0 +1,6 @@
+This sample project shows the Life cycle of Beans
+1) there are two methods in Bean Life cycle (init-method , destroy-method)
+2)We can only manage the complete(init-method , destroy-method)
+ lifecycle of singleton scope because
+ 3)prototype scope beans doent mantaintains destroy method
+ 4)the Methods must be void and no-arg methods

@@ -1,0 +1,37 @@
+This sample Project is an Example of Dependency injection using Constructor 
+Injection for Primitive value .
+
+Limitation of Constructor Dependency Injection is for One Bean
+ we can inject Property of only one Constructor at a time
+
+ <bean id="cCoach" class="com.saurav.spring.DependencyInjection.Constructor.CricketCoach">
+    <constructor-arg value="Batting and Fielding Practise for 4 hours Today!!" />
+    <constructor-arg value="10" type="int" />
+    <constructor-arg value="True" type="boolean" />
+    </bean>
+
+    this is Because Java only supports to create Objects using one Costructor at a time
+    
+    CricketCoach ch = new CricketCoach(arg1,arg2.....)
+    
+    
+    for Object dependency in Beans we can configure in below manner
+    
+    <bean id="exampleBean" class="examples.ExampleBean">
+    <!-- constructor injection using the nested ref element -->
+    <constructor-arg>
+        <ref bean="anotherExampleBean"/>
+    </constructor-arg>
+
+    <!-- constructor injection using the neater ref attribute -->
+    <constructor-arg ref="yetAnotherBean"/>
+
+    <constructor-arg type="int" value="1"/>
+</bean>
+
+<bean id="anotherExampleBean" class="examples.AnotherBean"/>
+<bean id="yetAnotherBean" class="examples.YetAnotherBean"/>
+
+
+
+We can also Pass the Dependencies as collection like , List , Set , Map etc.....

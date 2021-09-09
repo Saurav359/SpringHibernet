@@ -1,0 +1,6 @@
+This Sample Application shows the feature of Inversion of Control , i:e controlling the objects from Spring context/ Spring Factory / Bean Factory.
+
+In This Sample Project just by changing the Class in Context file we can manage the Object or Beans 
+
+<bean id="bCoach" class="com.saurav.spring.chapter1.ChessCoach"></bean>
+    </beans>
